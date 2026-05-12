@@ -27,7 +27,7 @@ function Footer() {
       </div>
       <div className="bb-footer__legal">
         <span>© 2026 Business Builder Co.</span>
-        <span>/// Hand-built in Austin ///</span>
+        <span>/// Hand-built in Rutland ///</span>
       </div>
     </footer>
   );
