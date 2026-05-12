@@ -378,6 +378,52 @@ details[open] .ad-faq__q::after {
   font-size: 14px; color: var(--bb-dust); font-style: italic;
 }
 
+/* ============== À La Carte ============== */
+.smm-alacarte {
+  padding: 96px 48px;
+  background: var(--bb-black);
+  border-top: 1px solid var(--bb-border-hair);
+}
+.smm-alacarte__inner { max-width: 1240px; margin: 0 auto; }
+.smm-alacarte__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.smm-alacarte__card {
+  background: var(--bb-black-warm);
+  border: 1px solid var(--bb-border-hair);
+  border-radius: var(--bb-radius-sm);
+  padding: 20px 22px;
+  display: grid; gap: 6px;
+  transition: border-color var(--bb-dur-fast), transform var(--bb-dur-fast);
+}
+.smm-alacarte__card:hover {
+  border-color: var(--bb-orange);
+  transform: translateY(-1px);
+}
+.smm-alacarte__card--custom {
+  border-style: dashed;
+  border-color: var(--bb-border-soft);
+}
+.smm-alacarte__name {
+  font-family: var(--bb-font-body); font-weight: 700;
+  font-size: 15px; color: var(--bb-cream);
+  letter-spacing: 0.01em;
+}
+.smm-alacarte__price {
+  font-family: var(--bb-font-display-2); font-weight: 800;
+  font-size: 28px; color: var(--bb-cream-bright);
+  line-height: 1; margin-top: 4px;
+}
+.smm-alacarte__price-note {
+  font-size: 16px; color: var(--bb-dust); margin-left: 2px;
+}
+.smm-alacarte__note {
+  margin: 4px 0 0; font-size: 13px; line-height: 1.45;
+  color: var(--bb-dust);
+}
+
 /* ============== Responsive ============== */
 @media (max-width: 960px) {
   .bb-hero__title { font-size: 56px; }
@@ -395,4 +441,6 @@ details[open] .ad-faq__q::after {
   .bb-site-header { padding: 18px 24px; }
   .bb-hero, .ad-problem, .ad-how, .ad-pricing, .ad-guarantee, .ad-faq, .ad-cta { padding-left: 24px; padding-right: 24px; }
   .smm-note-banner { margin: 16px 16px 0; padding: 18px 20px; }
+  .smm-alacarte { padding: 64px 24px; }
+  .smm-alacarte__grid { grid-template-columns: repeat(2, 1fr); }
 }
