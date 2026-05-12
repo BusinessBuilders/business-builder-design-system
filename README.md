@@ -13,7 +13,9 @@
 | `assets/` | Logos (transparent + solid), background textures, icon set |
 | `fonts/` | (loaded via Google Fonts — see Type below) |
 | `preview/` | Cards rendered into the Design System tab |
-| `ui_kits/agency-website/` | The 3-tier pricing page UI kit |
+| `ui_kits/agency-website/` | The original 3-tier agency pricing UI kit |
+| `ui_kits/ad-services/` | One-time setup pricing for ad campaign builds (Static / Combo / Motion) |
+| `ui_kits/social-media-services/` | Monthly retainer pricing for real estate social media management (Foundation / Growth / Showcase) |
 | `SKILL.md` | Cross-compatible skill manifest for Claude Code |
 | `uploads/` | Original source files from the brief |
 
@@ -191,5 +193,8 @@ Never. Not in copy, not in UI.
 - **Type** — Display (Lobster Two), Heavy display (Bowlby One SC), Body (Barlow Condensed), Eyebrow & labels
 - **Spacing** — Spacing scale, radius scale, shadow system
 - **Components** — Buttons (primary, ghost, link), Pricing tier card, Eyebrow + ornament, Form field, Tag/badge
-- **UI kits** — `ui_kits/agency-website/index.html` — the 3-tier pricing page
+- **UI kits** — three live kits:
+  - `ui_kits/agency-website/index.html` — original agency pricing page
+  - `ui_kits/ad-services/index.html` — one-time ad campaign setup pricing
+  - `ui_kits/social-media-services/index.html` — monthly real estate SMM retainer pricing
 
