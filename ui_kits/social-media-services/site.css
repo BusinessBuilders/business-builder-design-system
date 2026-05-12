@@ -349,6 +349,35 @@ details[open] .ad-faq__q::after {
   color: var(--bb-dust); font-weight: 600;
 }
 
+/* ============== Sample Note Banner (only on SMM page) ============== */
+.smm-note-banner {
+  max-width: 720px;
+  margin: 24px auto 0;
+  padding: 22px 28px 24px;
+  background: rgba(245, 230, 200, 0.06);
+  border: 1px solid var(--bb-border-soft);
+  border-left: 4px solid var(--bb-teal);
+  border-radius: var(--bb-radius-md);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  position: relative;
+  z-index: 4;
+}
+.smm-note-banner__inner { display: grid; gap: 8px; }
+.smm-note-banner__eyebrow {
+  font-family: var(--bb-font-body); font-weight: 700;
+  font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--bb-teal);
+}
+.smm-note-banner__body {
+  margin: 0;
+  font-size: 16px; line-height: 1.55; color: var(--bb-cream);
+}
+.smm-note-banner__sig {
+  margin: 4px 0 0;
+  font-size: 14px; color: var(--bb-dust); font-style: italic;
+}
+
 /* ============== Responsive ============== */
 @media (max-width: 960px) {
   .bb-hero__title { font-size: 56px; }
@@ -365,4 +394,5 @@ details[open] .ad-faq__q::after {
   .bb-site-header__nav { display: none; }
   .bb-site-header { padding: 18px 24px; }
   .bb-hero, .ad-problem, .ad-how, .ad-pricing, .ad-guarantee, .ad-faq, .ad-cta { padding-left: 24px; padding-right: 24px; }
+  .smm-note-banner { margin: 16px 16px 0; padding: 18px 20px; }
 }
