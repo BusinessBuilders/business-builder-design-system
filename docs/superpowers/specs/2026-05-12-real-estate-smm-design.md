@@ -28,13 +28,13 @@ This spec defines a **new, second services page** for monthly-recurring social m
 - We are not building a client portal, dashboard, scheduling tool, or any backend.
 - We are not redesigning the design system. We reuse `colors_and_type.css` tokens verbatim and follow the visual language of the existing ad-services page.
 - We are not modifying `ui_kits/ad-services/`. That page stays exactly as it is.
-- We are not adding a starter/$199 tier. A 4th tier dilutes the BB brand voice; à la carte add-ons capture budget needs instead.
+- We are not adding a starter/$199 tier. A 4th tier dilutes the BB brand voice; the $49 try-us-first trial callout captures budget-conscious prospects without breaking the 3-tier structure.
 
 ## 4. Audience & Positioning
 
 **Primary audience:** Solo real estate agents, 1–5 active listings, busy enough that posting consistently is the first thing that drops when work piles up.
 
-**Secondary audience:** Small real estate teams (2–5 agents) — same offering, same prices; the tiers scale via à la carte add-ons for additional volume.
+**Secondary audience:** Small real estate teams (2–5 agents) — same offering, same prices; additional volume is handled via custom quote rather than packaged add-ons.
 
 **Positioning line:** "You're busy. That's why we exist."
 
@@ -46,13 +46,12 @@ Mirrors `ui_kits/ad-services/index.html` section-for-section, with content adapt
 2. **Hero** — script-logo lockup, retro-pitchman headline, dual CTA (See the Numbers / How It Works)
 3. **Problem section** — 3 cards, BB-voice pain points
 4. **How It Works** — 3 numbered steps (build voice → make content → post & engage)
-5. **Pricing** — 3 tiers + ad-spend-style callout adapted to "monthly retainer, content included"
-6. **À La Carte add-on strip** — 6 small cards under the tier grid
-7. **Walkthrough hero section** — dedicated callout for the headline real estate capability
-8. **Guarantee**
-9. **FAQ**
-10. **CTA**
-11. **Footer** — identical pattern
+5. **Pricing** — 3 tiers + "monthly retainer" callout + $49 try-us-first trial callout inside the pricing section
+6. **Walkthrough hero section** — dedicated callout for the headline real estate capability
+7. **Guarantee**
+8. **FAQ**
+9. **CTA**
+10. **Footer** — identical pattern
 
 ### 5.0 "Sample Note" Banner (above hero or immediately below header)
 
@@ -153,22 +152,27 @@ Everything in Growth, plus:
 > **Monthly Retainer**
 > Everything is included — content, posting, engagement, reporting. No surprise charges. Cancel anytime with 30 days' notice.
 
-## 7. À La Carte Add-Ons (below tier grid)
+## 7. $49 Try-Us-First Trial Callout (inside pricing section)
 
-Six small cards in a 3×2 or 6×1 grid:
+A single horizontal callout sits inside the pricing section between the "How the monthly works" box and the "Not sure which plan?" closing line. It is **not** a tier on the pricing grid — it's an explicit low-commitment trial offer that doubles as the page's safety valve for prospects who can't yet justify a $699/mo retainer.
 
-| Add-on | Price |
-|---|---|
-| Extra Reel | $150 |
-| Extra Walkthrough Video | $300 |
-| On-Site Shoot Day (local only) — half-day | $400 |
-| On-Site Shoot Day (local only) — full day | $700 |
-| Matterport 3D Scan — under 3,000 sq ft | $400 |
-| Matterport 3D Scan — 3,000+ sq ft | $600 |
-| Single Branded Post | $75 |
-| Brand Voice Audit (one-time, new clients) | $295 |
+**Treatment:** orange-left-border banner on warm-black surface, 2-column grid (copy on left, CTA button on right).
 
-Footer line under grid: "Need something custom? Talk to us — we'll figure it out."
+**Copy:**
+- Eyebrow label: `Try Us First`
+- Headline: `One custom graphic & post — $49`
+- Body: "Not ready for a plan? Send us a listing or an idea. We'll design a branded graphic, write the caption in your voice, and hand it over ready to post. One piece, one price — see what we do before you commit."
+- CTA button: `Get a Sample Post` — opens `mailto:donovan@business-builder.online` with a pre-filled subject line `Try Us First — $49 Post` so inbound leads are pre-labeled.
+
+**Why this replaced the original à la carte grid:**
+
+The original design called for an 8-card à la carte add-on grid (extra reel, walkthrough, half-day shoot, full-day shoot, Matterport, single post, brand audit, custom quote). It was removed in `df674bf` because:
+
+1. The on-site shoot pricing (half-day $400, full-day $700) didn't fit the actual job shape — most single-listing real estate shoots wrap in 90 minutes, so a "full day" line item was selling work nobody was going to buy at the solo-agent target.
+2. The 8-card grid created decision fatigue directly before the walkthrough hero, hurting the funnel.
+3. A single $49 trial offer accomplishes the "low-commitment entry point" goal without diluting the 3-tier structure or putting four-figure shoot prices on the page that scare prospects off the recurring tiers.
+
+Out-of-scope add-ons (extra reels, Matterport scans, brand voice audits) are still available as custom quotes via the existing "Talk to us" CTAs — they just aren't surfaced on the marketing page.
 
 ## 8. Walkthrough Hero Section
 
@@ -222,7 +226,7 @@ ui_kits/
     site.css
 ```
 
-`index.html` follows the same HTML scaffold as ad-services. `site.css` reuses every token from `colors_and_type.css` and only adds page-specific layout classes (à la carte grid, walkthrough mini-flow, etc.).
+`index.html` follows the same HTML scaffold as ad-services. `site.css` reuses every token from `colors_and_type.css` and only adds three page-specific component blocks: `.smm-note-banner` (sample-prospect callout above the hero), `.smm-trial` ($49 try-us-first callout inside the pricing section), and `.smm-walkthrough*` (3-step walkthrough hero with local-property callout).
 
 README is updated to add the new UI kit to its index table.
 
@@ -272,7 +276,9 @@ README is updated to add the new UI kit to its index table.
 
 - [x] Approach approved by user (2026-05-12)
 - [x] Tier structure approved: $699 / $1,499 / $2,999 with B-tier content volumes
-- [x] À la carte strip included
+- [x] ~~À la carte strip~~ → replaced with single $49 try-us-first trial callout (revised 2026-05-12 after on-site shoot pricing didn't fit the job shape)
 - [x] Walkthrough hero section included
 - [x] "She's busy" framing baked into hero + problem copy
 - [x] "Sample / haven't heard back" framing baked in as an above-hero note banner
+- [x] $49 trial callout opens `mailto:` with pre-labeled subject line for inbox triage
+- [x] Footer location: Rutland (corrected from Austin placeholder)
