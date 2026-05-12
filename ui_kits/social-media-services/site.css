@@ -424,6 +424,63 @@ details[open] .ad-faq__q::after {
   color: var(--bb-dust);
 }
 
+/* ============== Walkthrough Hero ============== */
+.smm-walkthrough {
+  position: relative;
+  padding: 112px 48px;
+  background: var(--bb-black-soft);
+  border-top: 1px solid var(--bb-border-hair);
+  border-bottom: 1px solid var(--bb-border-hair);
+}
+.smm-walkthrough__inner {
+  max-width: 1080px; margin: 0 auto;
+  position: relative; z-index: 1;
+}
+.smm-walkthrough__steps {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 48px;
+}
+.smm-walkthrough__step {
+  background: var(--bb-black-warm);
+  border: 1px solid var(--bb-border-hair);
+  border-radius: var(--bb-radius-md);
+  padding: 28px 26px;
+}
+.smm-walkthrough__step-num {
+  font-family: var(--bb-font-display-2);
+  font-weight: 800; font-size: 40px; line-height: 1;
+  color: var(--bb-gold);
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+  text-shadow: 2px 3px 0 var(--bb-brick-deep);
+}
+.smm-walkthrough__step-title {
+  font-family: var(--bb-font-body); font-weight: 700;
+  font-size: 22px; color: var(--bb-cream-bright);
+  margin: 0 0 8px;
+}
+.smm-walkthrough__step-body {
+  margin: 0; font-size: 15px; line-height: 1.5;
+  color: var(--bb-taupe);
+}
+.smm-walkthrough__local {
+  background: var(--bb-black-warm);
+  border: 1px solid var(--bb-border-soft);
+  border-left: 4px solid var(--bb-gold);
+  border-radius: var(--bb-radius-sm);
+  padding: 20px 24px;
+  display: grid; gap: 6px;
+}
+.smm-walkthrough__local-label {
+  font-family: var(--bb-font-body); font-weight: 700;
+  font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--bb-gold);
+}
+.smm-walkthrough__local p {
+  margin: 0; font-size: 15px; line-height: 1.5; color: var(--bb-cream);
+}
+
 /* ============== Responsive ============== */
 @media (max-width: 960px) {
   .bb-hero__title { font-size: 56px; }
@@ -443,4 +500,6 @@ details[open] .ad-faq__q::after {
   .smm-note-banner { margin: 16px 16px 0; padding: 18px 20px; }
   .smm-alacarte { padding: 64px 24px; }
   .smm-alacarte__grid { grid-template-columns: repeat(2, 1fr); }
+  .smm-walkthrough { padding: 64px 24px; }
+  .smm-walkthrough__steps { grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
 }
